@@ -1,8 +1,0 @@
-@InProceedings{Bae2021,
-    title   = {Estimating and Exploiting the Aleatoric Uncertainty in Surface Normal Estimation}
-    author  = {Gwangbin Bae and Ignas Budvytis and Roberto Cipolla},
-    booktitle = {International Conference on Computer Vision (ICCV)},
-    year = {2021}                         
-}
-
-https://github.com/baegwangbin/surface_normal_uncertainty
