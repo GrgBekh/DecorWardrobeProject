@@ -10,4 +10,33 @@
 За детекцию и сегментацию отвечает segmentation_v01.ipynb, он работает как на искусственно созданных,
 так и на реальных изображениях:
 
+### Исходник
+![alt text](Assets/102_img.png)
+
+### Сегментация
+![alt text](Assets/segmented%20102.jpg)
+
+
 За извлечение карт нормалей отвечает eval.py и прочие .py файлы(библеотеки и модули):
+
+### Исходник
+![alt text](Assets/102_img.png)
+
+### Карта нормалей
+
+![alt text](Assets/102_pred_norm.png)
+
+
+## Credit is due
+
+Нейронная сеть по извлечению карт нормалей была позаимствована у
+
+https://github.com/baegwangbin/surface_normal_uncertainty
+
+@InProceedings{Bae2021,
+    title   = {Estimating and Exploiting the Aleatoric Uncertainty in Surface Normal Estimation}
+    author  = {Gwangbin Bae and Ignas Budvytis and Roberto Cipolla},
+    booktitle = {International Conference on Computer Vision (ICCV)},
+    year = {2021}                         
+}
+
