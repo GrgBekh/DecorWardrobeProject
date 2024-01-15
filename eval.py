@@ -70,23 +70,37 @@ def test(model, test_loader, device, results_dir):
 
 if __name__ == '__main__':
     # Arguments ########################################################################################################
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@', conflict_handler='resolve')
-    parser.convert_arg_line_to_args = utils.convert_arg_line_to_args
+    # parser = argparse.ArgumentParser(fromfile_prefix_chars='@', conflict_handler='resolve')
+    # parser.convert_arg_line_to_args = utils.convert_arg_line_to_args
+    #
+    # parser.add_argument('--architecture', required=True, type=str, help='{BN, GN}')
+    # parser.add_argument("--pretrained", required=True, type=str, help="{nyu, scannet}")
+    # parser.add_argument('--sampling_ratio', type=float, default=0.4)
+    # parser.add_argument('--importance_ratio', type=float, default=0.7)
+    # parser.add_argument('--input_height', default=480, type=int)
+    # parser.add_argument('--input_width', default=640, type=int)
+    # parser.add_argument('--imgs_dir', default='./examples', type=str)
+    #
+    # if sys.argv.__len__() == 2 and '.txt' in sys.argv[1]:
+    #     arg_filename_with_prefix = '@' + sys.argv[1]
+    #     args = parser.parse_args([arg_filename_with_prefix])
+    # else:
+    #     args = parser.parse_args()
 
-    parser.add_argument('--architecture', required=True, type=str, help='{BN, GN}')
-    parser.add_argument("--pretrained", required=True, type=str, help="{nyu, scannet}")
-    parser.add_argument('--sampling_ratio', type=float, default=0.4)
-    parser.add_argument('--importance_ratio', type=float, default=0.7)
-    parser.add_argument('--input_height', default=480, type=int)
-    parser.add_argument('--input_width', default=640, type=int)
-    parser.add_argument('--imgs_dir', default='./examples', type=str)
+    class Args_for_input():
+        def __init__(self):
+            self.architecture = 'GN'
+            self.pretrained = 'nyu'
+            self.sampling_ratio = 0.4
+            self.importance_ratio = 0.7
+            self.input_height = 480
+            self.input_width = 640
+            self.imgs_dir = './examples'
 
     # read arguments from txt file
-    if sys.argv.__len__() == 2 and '.txt' in sys.argv[1]:
-        arg_filename_with_prefix = '@' + sys.argv[1]
-        args = parser.parse_args([arg_filename_with_prefix])
-    else:
-        args = parser.parse_args()
+
+
+    args = Args_for_input()
 
     device = torch.device('cuda:0')
 
